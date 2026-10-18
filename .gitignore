@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/RemoteCtrl/RemoteClient/Debug
+/RemoteCtrl/RemoteClient/RemoteClient/Debug
+/RemoteCtrl/RemoteClient/x64/Debug
+/RemoteCtrl/RemoteClient/RemoteClient.vcxproj.user
+/RemoteCtrl/x64/Debug
+/RemoteCtrl/RemoteClient/RemoteClient.aps
+/RemoteCtrl/RemoteCtrlServer/x64/Debug
+/RemoteCtrl/RemoteCtrlServer/RemoteCtrlServer.vcxproj.user
+/RemoteCtrl/.vs/RemoteCtrl

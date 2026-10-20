@@ -8,6 +8,7 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+#include "ServerSocket.h"
 
 
 // 唯一的应用程序对象
@@ -33,7 +34,23 @@ int main()
         }
         else
         {
-           
+            //bind listen accept write read 
+            CServerSocket* pserver = CServerSocket::getInstance();
+            if (pserver->InitSocket() == false) {
+                MessageBox(NULL, _T("初始套接字失败，请检查网络！"), _T("初始化错误！"),MB_OK | MB_ICONERROR);
+            }
+            int count = 0;
+            while (CServerSocket::getInstance()!=NULL) {
+                if (pserver->AcceptCLient() == false) {
+                    MessageBox(NULL, _T("连接客户端失败，自动重试！"), _T("接入用户错误！"), MB_OK | MB_ICONERROR);
+                    if (count >= 3) {
+                        MessageBox(NULL, _T("多次接入用户失败，程序自动退出！"), _T("接入用户失败！"), MB_OK | MB_ICONERROR);
+                        exit(0);
+                    }
+                }
+                count++;
+            }
+            int ret = pserver->DealCommand();
         }
     }
     else

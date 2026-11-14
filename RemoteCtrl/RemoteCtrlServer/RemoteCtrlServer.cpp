@@ -10,6 +10,11 @@
 #endif
 #include "ServerSocket.h"
 
+//子系统+入口点
+//#pragma comment( linker, "/subsystem:windows /entry:WinMainCRTStartup" )
+//#pragma comment( linker, "/subsystem:windows /entry:mainCRTStartup" )
+//#pragma comment( linker, "/subsystem:console /entry:mainCRTStartup" )
+//#pragma comment( linker, "/subsystem:console /entry:WinMainCRTStartup" )
 
 // 唯一的应用程序对象
 
